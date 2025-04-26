@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search element into from an array </title>
+</head>
+<body>
+    <!-- take user input  -->
+     <input type="text" name="element" id="element" />
+     <button id = "searchBtn">search Element</button>
+    <script>
+        // static 
+        /*
+        let arr = [20, 30, 50,60, 10,80,90]
+        let item = 60;
+        let index = undefined ;
+
+        for(let i=0 ; i<arr.length -1 ; i++){
+            if(arr[i] === item){
+                index = i;
+                break;
+            }
+        }
+        console.log(index)
+        */
+        // dynamic logic 
+
+        let arr = [20, 30, 50,60, 10,80,90]
+
+        let searchBtn = document.getElementById('searchBtn');
+
+        let position = undefined;
+        searchBtn.addEventListener('click', ()=>{
+            let element = document.getElementById('element').value;
+            for(let i=0; i<arr.length-1; i++){
+                if(arr[i] === parseInt( element)){
+                    position = i;
+                    console.log(`element search on position ${position}`);
+                    break;
+                }
+            }
+        })
+        
+        // inbuild function 
+
+        // indexOf()
+
+    </script>
+</body>
+</html>
