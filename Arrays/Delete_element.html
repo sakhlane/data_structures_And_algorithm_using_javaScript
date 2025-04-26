@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Element From An Array </title>
+</head>
+<body>
+    <!-- get position value from a user  -->
+
+    <input type="text" name="position" id="position" />
+    <button id="removeBtn">Remove Element</button>
+    <script>
+        // static code 
+        
+     /*
+         let arr = [ 20 , 40, 30, 70, 10, 90]
+     let position = 2;
+     console.log(arr)
+     for(let i= 0; i<arr.length -1; i++){
+         if(i >= position){
+                arr[i] = arr[i+1]
+         }
+     }
+        arr.length = arr.length -1;
+     console.log(arr) 
+     */
+        
+        // dynamic code 
+        let arr = [ 20 , 40, 30, 70, 10, 90]
+    
+        let removeBtn = document.getElementById('removeBtn');
+        console.log(arr)
+        removeBtn.addEventListener('click' ,() => {
+            let position = document.getElementById('position').value;
+            for(let i = 0 ; i<arr.length; i++){
+                if(i >= position){
+                    arr[i] =arr[i+1]
+                }
+            }
+            arr.length = arr.length -1; 
+            console.log(arr)
+        })
+
+    </script>
+</body>
+</html>
