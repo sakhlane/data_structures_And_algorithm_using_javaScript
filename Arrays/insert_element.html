@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert Element Into an Array</title>
+  </head>
+  <body>
+    <!-- take position and value from a user dynamically -->
+
+    <input
+      type="text"
+      name="position"
+      id="position"
+      placeholder="enter position"
+    />
+    <input
+      type="text"
+      name="newElement"
+      id="newElement"
+      placeholder="enter new element"
+    />
+    <button id="insertBtn">Insert</button>
+
+    <script>
+      // insert element into an array
+
+      // let arr  = [10,50, 40, 30, 60, 90]
+
+      // let newElement = 70; //new element to insert
+      // let position = 2 ; // position or index where the element shold be inserted
+
+      // console.log(arr)
+      // for(let i = arr.length -1; i>=0; i--){
+      //     if(i>=position){
+      //         arr[i+1] = arr[i]
+      //     }
+      //     if(i === position){
+      //         arr[i] = newElement;
+      //     }
+      // }
+      // console.log(arr)
+
+      let arr = [10, 50, 40, 30, 60, 90];
+
+      let insertBtn = document.getElementById("insertBtn");
+
+      insertBtn.addEventListener("click", (position, newElement) => {
+        position = document.getElementById("position").value;
+        newElement = document.getElementById("newElement").value;
+        // console.log(position,newElement)
+        console.log(arr);
+        for (let i = arr.length - 1; i >= 0; i--) {
+          if (newElement >= 0 && typeof parseInt(newElement) === "number" && position >= 0 && typeof parseInt(position) === "number") {
+            if (position <= i) {
+              arr[i + 1] = arr[i];
+            }
+            if (position == i) {
+              arr[i] = newElement;
+            }
+          }
+          else {
+            console.log('please enter a valid position and newElement ')
+          }
+        }
+        console.log(arr);
+      });
+    </script>
+  </body>
+</html>

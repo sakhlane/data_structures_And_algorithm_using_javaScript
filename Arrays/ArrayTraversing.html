@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Traversing </title>
+</head>
+<body>
+
+    <!-- take  index number as input  form the user   -->
+
+    <input type="text" name="user_input" id="user_input">
+
+    <button type="submit" onclick="result()" id="button">get data</button>
+    
+    <script>
+      let arr  = [ 10, 20, 30, 44, 50, 60]
+
+    //   traversing 
+    // for(let i=0; i<arr.length; i++){
+    //     console.log(arr[i])
+    // }
+
+    // let button_click = document.getElementById('button')
+    
+    
+    function result(){
+        let user_input = document.getElementById('user_input').value;
+        
+        if(user_input < arr.length && typeof parseInt(user_input) === 'number'&& user_input >= 0){
+
+            console.log(arr[user_input])
+        }else {
+            console.log('please enter a valid number')
+        }
+    }
+   
+        
+    </script>
+
+</body>
+</html>
