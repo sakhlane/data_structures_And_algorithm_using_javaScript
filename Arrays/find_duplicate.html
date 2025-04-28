@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find duplicate element from an array </title>
+</head>
+<body>
+    <script>
+        // find a single number duplicate 
+        let data = [10, 20, 30, 40, 50, 60, 10, 90,50] 
+        let findNum = 50;
+        let empArr = []
+
+        for(let i =0 ; i<data.length; i++){
+            if(findNum == data[i]){
+                empArr[empArr.length] = i;
+            }
+        }
+      console.log(data.indexOf(findNum))
+    </script>
+</body>
+</html>
