@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursion</title>
+  </head>
+  <body>
+    <script>
+      //  A function call agin and again itself
+
+      function apple(x) {
+        // console.log('apple function called')
+        // console.log('apple function called ',x)
+        if (x > 0) {
+          apple(x - 1); // recursive function
+          console.log("apple function called ", x);
+        }
+      }
+      let data = 5;
+      // debugger
+      apple(data);
+
+      // print natural numbers using recursion
+
+      function naturalNumber(input) {
+        if (input > 0) {
+          naturalNumber(input - 1);
+          console.log(input);
+        }
+      }
+
+      // Reverse natural numbers
+
+      function ReverseNaturalNumbers(input) {
+        console.log(input);
+        if (input > 0) {
+          ReverseNaturalNumbers(input - 1);
+        }
+      }
+
+      let number = 10;
+    //   naturalNumber(number);
+    //   ReverseNaturalNumbers(number)
+
+    // find factorial of a number using recursion 
+
+    function factorial(number){
+        if(number == 0){
+            return 1;
+        }
+            return number*factorial(number-1);
+    }
+
+    console.log(factorial(5))
+    </script>
+  </body>
+</html>
