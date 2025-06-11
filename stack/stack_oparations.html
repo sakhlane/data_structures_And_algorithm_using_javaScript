@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stack oparations </title>
+</head>
+<body>
+    <input type="text" name="element" id="newElement" />
+    <button onclick="push()">insert element</button>
+    <button onclick = "pop()">delete element</button>
+    <button onclick="display()">show all elements from stack</button>
+    <script>
+        // stack data structure 
+
+        let data = [];
+        let currentSize = data.length;
+        let maxVal = 5;
+        console.log(currentSize);
+        // push function 
+
+        const push = () =>{
+            let input = document.getElementById("newElement").value;
+            if(currentSize < maxVal){
+                 data[currentSize] = input  ; 
+                currentSize ++ ;        
+            }else {
+                console.log('length is overflow')
+            }
+            document.getElementById("newElement").value = ''; 
+        }
+
+        // console.log(data)
+        //pop function 
+
+        const pop = () => {
+            let popped ;
+            if(data.length > 0){
+                popped = data[data.length - 1];
+                data.length = data.length - 1 ;
+            }else {
+                console.log('stack is empty')
+            }
+            return popped;
+        }
+
+        const display = () =>{
+            for(let i=0 ; i<data.length; i++){
+                console.log(data[i])
+            }
+        }
+
+
+        
+        // console.log(data[data.length - 1])
+      
+    </script>
+</body>
+</html>
