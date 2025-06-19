@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quee oparation </title>
+</head>
+<body>
+   <script>
+    console.log('quee oparation ')
+
+    class Quee {
+        // properties 
+        data 
+        currentSize 
+        maxSize 
+
+        // constructor function
+        constructor () {
+            this.data = []
+            this.currentSize = this.data.length;
+            this.maxSize = 5;
+            console.log('constructor function running')
+        }
+
+        enquee (newVal){
+            this.data[this.currentSize] = newVal;
+            if(this.currentSize < this.maxSize -1 ){
+                this.currentSize ++;
+                
+            }else {
+                console.log('quee is full')
+            }
+        }
+
+        dequee(){
+            if(this.currentSize <= this.maxSize){
+
+                for (let i = 0; i<this.data.length; i++){
+                    this.data[i] = this.data[i + 1];
+                }
+                this.data.length = this.data.length -1 ;
+                this.currentSize = this.data.length;
+            }
+        }
+
+        display(){
+            for (let i =0 ; i<this.data.length ; i++){
+                console.log(this.data[i])
+            }
+        }
+
+        front (){
+            if(this.isEmpty()){
+                let frontEl = this.data[0];
+               console.log(frontEl)
+            }else {
+                console.log('quee is empty')
+            }
+        }
+
+        rear (){
+            if(this.isEmpty()){
+                let rearEl = this.data[this.data.length - 1]
+                console.log(rearEl);
+            }else {
+                console.log('quee is empty')
+            }
+        }
+        
+        isEmpty(){
+            if(this.currentSize > 0){
+             return true;
+            }else{
+                return false;
+            }
+        }
+    }
+
+    const q1 = new Quee;
+    // q1.enquee(20);
+    // q1.enquee(30)
+    // q1.enquee(90);
+    // q1.enquee(200);
+   q1.front();
+   q1.rear(); 
+   </script> 
+</body>
+</html>
