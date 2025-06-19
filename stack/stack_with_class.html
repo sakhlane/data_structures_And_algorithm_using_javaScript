@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stack with class </title>
+</head>
+<body>
+    <script>
+        console.log('stack with class ')
+
+        // stack with class
+
+        class Stack{
+            // properties
+            data;
+            currentSize;
+            maxSize ;
+
+            // constructor function
+            constructor(){
+                this.data = [];
+                this.currentSize = this.data.length;
+                this.maxSize = 5;
+                console.log(this.maxSize)
+            }
+
+            // push oparation
+            push(newVal){
+                if(this.currentSize < this.maxSize){
+                    this.data[this.currentSize] = newVal;
+                    this.currentSize ++;
+                }else{
+                    console.log('stack is full')
+                }
+
+            }
+
+            // pop oparation
+            pop(){
+                this.popElement = this.data[this.data.length -1 ];
+                if(this.currentSize >= 0){
+                   this.data.length = this.data.length -1;
+                   this.currentSize = this.data.length;
+                }
+                return this.popElement;
+            }
+            
+            // display function
+            display(){
+                for(let i=0 ; i<this.data.length ; i++){
+                    console.log(this.data[i])
+                }
+            }
+
+        }
+
+        const st1 = new Stack;
+          st1.push(100);
+          st1.push(200);
+          st1.push(200);
+          st1.push(300);
+          st1.push(400);
+          st1.push(500);
+          st1.pop()
+          st1.pop()
+          
+          let popEl = st1.pop();
+          console.log(popEl)
+          st1.push(900)
+          st1.push(10000)
+          st1.push(20000)
+          console.log(st1.data)
+          console.log(st1.display());
+    </script>
+</body>
+</html>
