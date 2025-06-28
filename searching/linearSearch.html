@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linear search</title>
+</head>
+<body>
+    <script>
+        console.log('searching script running');
+        // searching 
+        let data = [10 , 20, 30, 90,60, 50, 70]
+
+        let find = 301;
+        let position = undefined ;
+            //linear seach 
+        for( let i = 0; i<data.length ; i++ ){
+            if(data[i] == find){
+                position = i;
+                break;
+            }
+        }
+        if(!position){
+            console.log('element not found ')
+        }
+
+        console.log(position)
+    </script>
+</body>
+</html>
