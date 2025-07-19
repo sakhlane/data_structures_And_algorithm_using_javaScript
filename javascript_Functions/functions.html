@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javaScript functions</title>
+  </head>
+  <body>
+    <h1>javaScript functions</h1>
+
+    <script>
+      console.log("going to learn functions in detail");
+
+      // normal function
+      function functionHello() {
+        console.log("welocme to javascript 21 days challenge");
+      }
+
+      functionHello();
+
+      // function with arguments
+      function add(a, b) {
+        // (a,b) are parameters which received values from function call
+        console.log(a + b);
+      }
+      add(2, 3);
+
+      //  anonimus function
+      const anonimusFunc = function () {
+        console.log("log from anonimusFunc");
+        return "anonimus fuction which has no name";
+      };
+      console.log(anonimusFunc());
+
+      // arrow functions
+
+      const arrowFunc = () => {
+        console.log("log from arrow function");
+      };
+      console.log(arrowFunc());
+
+      // closures
+      // => closures are a function with its lexcical environment is called closure
+
+      console.log("------------");
+
+      function outer() {
+        let y = 0;
+        return function test() {
+            y = 0;
+          let x = 20;
+          return function () {
+            x++;
+            y = y + 20;
+           return x ;
+          };
+        //   return y
+        }
+        
+      }
+
+      let test = outer();
+      console.log(test());
+      console.log(test());
+      console.log(test());
+      console.log(outer)
+      let xVal = test();
+      console.log(xVal());
+      console.log(xVal());
+      console.log(xVal());
+
+
+      //    function test(){
+      //     let x = 20;
+      //     return function(){
+      //         x++;
+      //         return x;
+      //     }
+      //    }
+
+    //   console.log(test());
+
+    //   let inner = test();
+    //   console.dir(inner);
+    //   console.log(inner());
+    //   console.log(inner());
+    //   console.dir(inner);
+      //    console.log(test())
+    </script>
+  </body>
+</html>
